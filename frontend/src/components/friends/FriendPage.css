@@ -1,0 +1,76 @@
+.FriendPage-container {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.FriendPage-backButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  color: #ff007f;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.FriendPage-profileSection {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.FriendPage-profileImage {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid #ff007f;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.FriendPage-friendName {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.FriendPage-infoSection {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.FriendPage-section {
+  background-color: #151515;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.FriendPage-section h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #ff007f;
+}
+
+.FriendPage-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.FriendPage-section ul li {
+  padding: 5px 0;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.FriendPage-section ul li:last-child {
+  border-bottom: none;
+}

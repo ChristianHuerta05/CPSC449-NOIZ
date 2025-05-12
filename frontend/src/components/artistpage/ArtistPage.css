@@ -1,0 +1,239 @@
+.ArtistPage-container {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.ArtistPage-backButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  color: #ff007f;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.ArtistPage-header {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.ArtistPage-headerImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(40%);
+}
+
+.ArtistPage-headerOverlay {
+  position: relative;
+  z-index: 1;
+}
+
+.ArtistPage-artistName {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.ArtistPage-artistFollowers {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+.ArtistPage-genres {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ArtistPage-genreTag {
+  background-color: #ff007f;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.ArtistPage-content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.ArtistPage-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+.ArtistPage-sectionTitle {
+  font-size: 20px;
+  color: #ff007f;
+  margin-bottom: 12px;
+}
+
+.ArtistPage-songList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ArtistPage-songItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.ArtistPage-songImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.ArtistPage-songDetails {
+  flex: 1;
+  overflow: hidden;
+}
+
+.ArtistPage-songTitle {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ArtistPage-songAlbum {
+  font-size: 12px;
+  color: #aaa;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ArtistPage-songDuration {
+  font-size: 13px;
+  color: #888;
+}
+
+.ArtistPage-albumGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 15px;
+}
+
+.ArtistPage-albumCover {
+  background-color: #151515;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.ArtistPage-albumCover:hover {
+  transform: translateY(-5px);
+}
+
+.ArtistPage-albumImage {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.ArtistPage-albumTitle {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 5px 0 2px 0;
+}
+
+.ArtistPage-albumDate {
+  font-size: 12px;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .ArtistPage-header {
+    height: 220px;
+  }
+
+  .ArtistPage-artistName {
+    font-size: 28px;
+  }
+
+  .ArtistPage-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .ArtistPage-sectionTitle {
+    font-size: 18px;
+  }
+
+  .ArtistPage-songItem {
+    gap: 10px;
+  }
+}
+
+.search-results-dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: #151515;
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-result-item:hover {
+  background-color: #212121;
+}
+
+.search-result-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.clickable-track {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.clickable-track:hover {
+  color: #ff007f;
+  text-decoration: underline;
+}

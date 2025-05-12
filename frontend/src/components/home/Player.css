@@ -1,0 +1,37 @@
+.player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: #151515;
+  color: #fff;
+  padding: 10px;
+  gap: 15px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.player-cover {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.player-info {
+  flex: 1;
+}
+
+.player-track-name {
+  font-weight: bold;
+}
+
+.player-artist-name {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.player-audio {
+  height: 30px;
+}

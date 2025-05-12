@@ -1,0 +1,217 @@
+.main-landing-container {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100dvh;
+  width: 10%;
+
+  background-color: #000;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100dvw;
+  height: 100%;
+
+  background-image: url("https://storage.googleapis.com/noiz-assets/bg-bot.svg");
+  background-size: 100% auto;
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+  flex-grow: 1;
+  position: relative;
+}
+.hero-content-container {
+  background-image: url("https://storage.googleapis.com/noiz-assets/land-bg.svg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.parallax-image {
+  display: block;
+}
+.landing-header {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: start;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-button {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.landing-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 300px;
+  will-change: transform;
+  text-align: center;
+}
+
+.gradient-text {
+  position: relative;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.1rem;
+  font-size: 5rem;
+  background: linear-gradient(270deg, #007bff 0%, rgba(255, 0, 127, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.discover-button {
+  display: flex;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  padding: 15px 60px;
+  cursor: pointer;
+  background-color: black;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 0 18px 3px #ff007f;
+}
+.discover-button-container {
+  transform: scale(100);
+  background-color: rgb(225, 0, 0);
+}
+.discover-button:hover {
+  transform: scale(1.8);
+  box-shadow: 0 0 20px 8px #ff007f;
+  transition: all 0.5s ease-in-out;
+}
+
+.gradient-text-button {
+  background: linear-gradient(270deg, #007bff 0%, rgba(255, 0, 127, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.parallax-image {
+  display: block;
+}
+
+.disk {
+  position: absolute;
+  width: 300px;
+  top: 0;
+  right: 20px;
+}
+
+.lines {
+  width: 100%;
+}
+
+.disk-reverse {
+  width: 300px;
+  align-self: flex-start;
+  margin-left: 20px;
+}
+.spacer {
+  height: 1300px;
+}
+@media (max-width: 768px) {
+  .landing-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .landing-title-container {
+    top: 20vh;
+    padding: 0 20px;
+  }
+  .gradient-text {
+    font-size: 3rem;
+  }
+  .discover-button {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+  }
+  .disk,
+  .disk-reverse {
+    width: 200px;
+  }
+}
+
+.songs-carousel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.songs-carousel-text {
+  width: 100%;
+}
+
+.carousel-landing {
+  width: 100%;
+  background-color: #8dc4ff;
+  position: relative;
+}
+
+.carousel-animation {
+  transition: all 0.5s ease-in-out;
+}
+
+.songs-carousel-controller {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  align-items: center;
+  justify-content: start;
+
+  max-width: 50%;
+  width: 600px;
+}
+
+.carousel-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: none;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+  border: none;
+}
+
+.carousel-button:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.bottom-content-landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2000px;
+
+  flex-grow: 1;
+}

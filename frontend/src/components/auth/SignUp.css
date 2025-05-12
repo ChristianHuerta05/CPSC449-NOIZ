@@ -1,0 +1,199 @@
+.SignUpContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    113deg,
+    rgba(30, 144, 255, 0.3) -12.04%,
+    rgba(24, 24, 24, 0.25) 50.67%,
+    rgba(255, 20, 147, 0.3) 113.37%
+  );
+  box-sizing: border-box;
+}
+
+.SignUpLeftHalf {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 50%;
+  padding-left: 25px;
+  min-width: 300px;
+  background: transparent;
+}
+
+.SignUpImage {
+  height: calc(100vh - 50px);
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  background-color: #282828;
+}
+
+.SignUpRightHalf {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  color: #fff;
+  min-width: 300px;
+}
+
+.SignUpBeginText {
+  margin-bottom: 20px;
+}
+
+.SignUpRightHalf h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.SignUpRightHalf p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.SignUpSeparator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0;
+  color: #fff;
+  width: 100%;
+}
+
+.SignUpSeparator::before,
+.SignUpSeparator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #fff;
+  margin: 0 10px;
+}
+
+#log-in {
+  text-decoration: underline;
+  color: #fff;
+  font-size: 16px;
+}
+
+.SignUpForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.SignUpNameGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.SignUpNameField {
+  width: 48%;
+  background: #282828;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.SignUpFormGroup {
+  background: #282828;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.SignUpInput {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+}
+
+.SignUpCheckboxGroup {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.SignUpCheckboxGroup label {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.SignUpGradientButton,
+.SignUpSpotifyButton {
+  align-self: center;
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.SignUpGradientButton {
+  background: linear-gradient(90deg, #e70073 0%, #007bff 100%);
+  color: #fff;
+}
+
+.SignUpSpotifyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #1db954;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 24px;
+}
+
+.SpotifyIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .SignUpContainer {
+    flex-direction: column;
+  }
+  .SignUpLeftHalf,
+  .SignUpRightHalf {
+    width: 100%;
+    padding: 20px;
+  }
+  .SignUpRightHalf h2 {
+    font-size: 28px;
+  }
+  .SignUpRightHalf p {
+    font-size: 14px;
+  }
+  .SignUpGradientButton,
+  .SignUpSpotifyButton {
+    max-width: 100%;
+    height: 45px;
+    font-size: 14px;
+  }
+  .SignUpInput {
+    font-size: 14px;
+  }
+}

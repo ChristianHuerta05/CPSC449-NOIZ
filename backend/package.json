@@ -1,0 +1,25 @@
+{
+  "name": "noiz-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/cloud-sql-connector": "^1.8.0",
+    "bcrypt": "^5.1.1",
+    "cookie-session": "^2.1.0",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.1",
+    "mysql2": "^3.14.1"
+  },
+  "description": ""
+}
