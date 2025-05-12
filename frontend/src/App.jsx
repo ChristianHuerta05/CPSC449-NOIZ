@@ -38,7 +38,6 @@ const AppContent = () => {
         <Route path="/connect-spotify" element={<SpotifyConnect />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
-
         <Route path="/artist/:artistId" element={<ArtistPage />} />
         <Route path="/friends/:friendId" element={<FriendPage />} />
         <Route path="/friends-menu" element={<FriendsMenu />} />

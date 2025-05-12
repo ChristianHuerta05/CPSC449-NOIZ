@@ -43,9 +43,6 @@ const HomeBody = () => {
     else setGreeting("Good Evening");
   }, []);
 
-  const onRecommendClick = () => {
-    navigate("/recommendations");
-  };
   const handleFriendClick = (friendId) => {
     navigate(`/friends/${friendId}`);
   };
@@ -141,12 +138,6 @@ const HomeBody = () => {
           <p>
             Immerse yourself in a distraction-free listening experience with
             specially curated tracks.
-          </p>
-        </div>
-        <div onClick={onRecommendClick}>
-          <h4>Swipe Mix</h4>
-          <p>
-            Build your custom collection of tracks for every mood and moment.
           </p>
         </div>
       </div>
