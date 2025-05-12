@@ -6,22 +6,14 @@ Frontend interface for **Noiz**, a web application developed for **CPSC 449 - We
 
 Noiz enhances your music experience by combining personalization, social discovery, and powerful tools.
 
-- Generate playlists tailored to your vibe and occasion  
-- See what your friends are listening to  
-- Stay in the zone with Focus Mode  
 - Search for any artist directly through Spotify
+- Stay in the zone with Focus Mode  
+- See what your friends are listening to
 
 ## Technologies Used
 
 - React.js  
 - Node.js
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)  
-- npm (v6 or higher)
 
 ## Live Site
 
