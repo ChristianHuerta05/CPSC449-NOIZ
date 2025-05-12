@@ -27,4 +27,4 @@ Noiz enhances your music experience by combining personalization, social discove
 
 Visit the app at:  
 [https://noiz-263685964541.us-central1.run.app/](https://noiz-263685964541.us-central1.run.app/)
-(⚠️ Only works for the developers because the spotify API is in dev mode so allowed users must be added manually)
+- (⚠️ Only works for the developers because the spotify API is in dev mode so allowed users must be added manually)
