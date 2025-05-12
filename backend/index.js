@@ -27,6 +27,7 @@ const {
 const app = express();
 const port = parseInt(process.env.PORT, 10) || 8080;
 
+// connects to MongoDB databse
 mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
@@ -52,6 +53,7 @@ const playlistSchema = new mongoose.Schema({
 });
 const Playlist = mongoose.model("Playlist", playlistSchema);
 
+// creates a proxy for the Google Cloud MySQL Database since this server is hosted on GCP Run
 app.set("trust proxy", 1);
 app.use(
   cookieSession({
@@ -63,14 +65,18 @@ app.use(
     sameSite: "lax",
   })
 );
+
+// parse all requests to JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// path the the static react app
 const staticPath = path.join(process.cwd(), "dist");
 app.use(express.static(staticPath));
 
 const connector = new Connector();
 
+// makes connection with the MySQL database
 async function createPool() {
   const clientOpts = await connector.getOptions({
     instanceConnectionName: process.env.INSTANCE_CONNECTION_NAME,
@@ -86,6 +92,8 @@ async function createPool() {
 }
 
 const poolPromise = createPool();
+
+// helper function that finds a user by email in the database
 async function findUserByEmail(email) {
   const pool = await poolPromise;
   const [rows] = await pool.query("SELECT * FROM users WHERE email = ?", [
@@ -94,6 +102,7 @@ async function findUserByEmail(email) {
   return rows[0];
 }
 
+// Post API that creates a new user in the database
 app.post("/api/signup", async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
   if (!firstName || !lastName || !email || !password) {
@@ -120,6 +129,7 @@ app.post("/api/signup", async (req, res) => {
   }
 });
 
+// Post API that signs in a user
 app.post("/api/signin", async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -137,6 +147,7 @@ app.post("/api/signin", async (req, res) => {
   }
 });
 
+// Get API to create a new session
 app.get("/api/check-session", (req, res) => {
   res.json(
     req.session.userId
@@ -145,6 +156,7 @@ app.get("/api/check-session", (req, res) => {
   );
 });
 
+// Get API to get a users details
 app.get("/api/user", async (req, res) => {
   if (!req.session.userId)
     return res.status(401).json({ error: "Not logged in" });
@@ -167,6 +179,7 @@ const SPOTIFY_SCOPES = [
   "playlist-modify-private",
 ].join(" ");
 
+// Get API to login a user to Spotify and get a token
 app.get("/api/spotify/login", (req, res) => {
   if (!SPOTIFY_CLIENT_ID || !SPOTIFY_REDIRECT_URI) {
     return res.status(500).send("Spotify config missing");
@@ -185,6 +198,7 @@ app.get("/api/spotify/login", (req, res) => {
   res.redirect(`https://accounts.spotify.com/authorize?${params}`);
 });
 
+// Get API to handle the Spotify callback and exchange the code for an access token
 app.get("/api/spotify/callback", async (req, res) => {
   const { code, state } = req.query;
   if (state !== req.session.spotifyOAuthState) {
@@ -229,6 +243,7 @@ app.get("/api/spotify/callback", async (req, res) => {
   res.redirect("/home");
 });
 
+// Get API to see if the user is connected to Spotify and token status
 app.get("/api/spotify/status", async (req, res) => {
   if (!req.session.userId) return res.status(401).end();
   const pool = await poolPromise;
@@ -288,6 +303,7 @@ async function getValidSpotifyToken(userId) {
   return access_token;
 }
 
+// Get API to get the Spotify token
 app.get("/api/spotify/token", async (req, res) => {
   try {
     if (!req.session.userId) return res.status(401).end();
@@ -298,6 +314,7 @@ app.get("/api/spotify/token", async (req, res) => {
   }
 });
 
+// Get API to get the current user profile info from Spotify
 app.get("/api/spotify/me", async (req, res) => {
   try {
     if (!req.session.userId) return res.status(401).end();
@@ -311,6 +328,7 @@ app.get("/api/spotify/me", async (req, res) => {
   }
 });
 
+// Get API to search for Spotify artists
 app.get("/api/spotify/search", async (req, res) => {
   try {
     if (!req.session.userId) return res.status(401).end();
@@ -330,6 +348,7 @@ app.get("/api/spotify/search", async (req, res) => {
   }
 });
 
+// Put API to play a track on Spotify
 app.put("/api/spotify/play", async (req, res) => {
   try {
     if (!req.session.userId) return res.status(401).end();
@@ -353,12 +372,14 @@ app.put("/api/spotify/play", async (req, res) => {
   }
 });
 
+// Get API to get the playlist of a user
 app.get("/api/playlists", async (req, res) => {
   if (!req.session.userId) return res.status(401).end();
   const pls = await Playlist.find({ userId: req.session.userId });
   res.json(pls);
 });
 
+// Post API to create a new playlist
 app.post("/api/playlists", async (req, res) => {
   if (!req.session.userId) return res.status(401).end();
   const { name } = req.body;
@@ -367,6 +388,7 @@ app.post("/api/playlists", async (req, res) => {
   res.status(201).json(pl);
 });
 
+// Post API to add a song to a playlist
 app.post("/api/playlists/:id/songs", async (req, res) => {
   if (!req.session.userId) return res.status(401).end();
   const { id } = req.params;
@@ -394,6 +416,7 @@ app.post("/api/playlists/:id/songs", async (req, res) => {
   res.json(pl);
 });
 
+// Get API to add audio features of a song
 app.get("/api/spotify/audio-features", async (req, res) => {
   if (!req.session.userId) return res.status(401).end();
   const ids = req.query.ids;
