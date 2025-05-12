@@ -23,34 +23,7 @@ Noiz enhances your music experience by combining personalization, social discove
 - Node.js (v14 or higher)  
 - npm (v6 or higher)
 
-### Installation
-
-1. Clone the repository:  
-   `git clone https://github.com/ChristianHuerta05/CPSC449-NOIZ.git`
-
-2. Navigate to the frontend directory:  
-   `cd frontend`
-
-3. Install dependencies:  
-   `npm install`
-
-4. Run the frontend:  
-   `npm run dev`
-
-5. Navigate to the backend directory:  
-   `cd ..`  
-   `cd backend`
-
-6. Run the server
-    `node index.js`
-
-7. Build the Docker image:  
-   `docker build -t noiz-backend .`
-
-8. Run the container:  
-   `docker run -p 8080:8080 noiz-backend`
-
 ## Live Site
 
-OR Visit the app at:  
+Visit the app at:  
 [https://noiz-263685964541.us-central1.run.app/](https://noiz-263685964541.us-central1.run.app/)
