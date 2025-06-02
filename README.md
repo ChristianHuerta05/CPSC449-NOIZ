@@ -14,6 +14,9 @@ Noiz enhances your music experience by combining personalization, social discove
 
 - React.js
 - Node.js
+- Google Cloud SQL
+- Google Cloud Run
+- MongoDB
 
 ## Backend Structure
 
