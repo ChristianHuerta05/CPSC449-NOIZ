@@ -15,9 +15,11 @@ Noiz enhances your music experience by combining personalization, social discove
 - React.js
 - Node.js
 
-## Live Site
+## Backend Structure
 
-Visit the app at:  
-[https://noiz-263685964541.us-central1.run.app/](https://noiz-263685964541.us-central1.run.app/)
+This is the backend structure of the app:
 
-- (⚠️ Only works for the developers because the spotify API is in dev mode so allowed users must be added manually)
+![noiz-backend-structure](https://github.com/user-attachments/assets/4674ef0a-2bb5-4c21-96e9-eb2e0cdf519e)
+
+> **Video Demo:**  
+> https://youtu.be/eCaW2FXS0uI
